@@ -12,6 +12,12 @@ $ npm install react-bootstrap bootstrap@5.1.3
 $ npm install next-connect
 ```
 
+## 调试运行
+
+```bash
+$ npm run dev
+```
+
 ## Github
 
 ```bash

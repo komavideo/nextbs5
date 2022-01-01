@@ -3,6 +3,7 @@ const listNews = (async (req, res) => {
         result: 'List Page ' + req.query.p,
         method: req.method,
         query: req.query,
+        url: req.url,
     })
 })
 
@@ -11,6 +12,7 @@ const getNews = (async (req, res) => {
         result: 'Get ' + req.query.id,
         method: req.method,
         query: req.query,
+        url: req.url,
     })
 })
 
@@ -18,7 +20,8 @@ const createNews = (async (req, res) => {
     return res.json({
         result: 'Create 1',
         method: req.method,
-        query: req.query,
+        url: req.url,
+        body: req.body,
     })
 })
 
@@ -27,6 +30,8 @@ const updateNews = (async (req, res) => {
         result: 'Update 1',
         method: req.method,
         query: req.query,
+        url: req.url,
+        body: req.body,
     })
 })
 
@@ -35,6 +40,7 @@ const deleteNews = (async (req, res) => {
         result: 'Delete 1',
         method: req.method,
         query: req.query,
+        url: req.url,
     })
 })
 

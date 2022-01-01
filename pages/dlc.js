@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import MainLayout from '../components/layout/MainLayout'
 
 import { Button, Badge, DropdownButton, ButtonGroup, Dropdown, ProgressBar, Spinner, Form } from 'react-bootstrap'
 
@@ -18,15 +18,10 @@ const DLC = () => {
         alert(`您按下了 ${variant} 颜色的按钮。`)
     }
     return (
-        <div>
-            <Head>
-                <title>React+Bootstrap5</title>
-                <meta name="description" content="The most popular front-end framework
-Rebuilt for React." />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-            <main className='m-3'>
-                <h1>React+Bootstrap5</h1>
+        <MainLayout title='React + Bootstrap5 组件演示'>
+            <section className='m-3'>
+                <h3 className="text-secondary">React+Bootstrap5</h3>
+                <hr />
                 <div>
                     <h2>按钮</h2>
                     {
@@ -39,7 +34,7 @@ Rebuilt for React." />
                     <h2>标签</h2>
                     {
                         colorList.map((variant, idx) => (
-                            <Badge bg={variant} className='m-1'>{variant}</Badge>
+                            <Badge key={idx} bg={variant} className='m-1'>{variant}</Badge>
                         ))
                     }
                 </div>
@@ -49,7 +44,7 @@ Rebuilt for React." />
                         colorList.map((variant, idx) => (
                             <DropdownButton
                                 as={ButtonGroup}
-                                key={variant}
+                                key={idx}
                                 id={`dropdown-variants-${variant}`}
                                 variant={variant.toLowerCase()}
                                 title={variant}
@@ -70,7 +65,7 @@ Rebuilt for React." />
                     <h2>进度条</h2>
                     {
                         colorList.map((variant, idx) => (
-                            <ProgressBar striped animated variant={variant} now={Math.floor(Math.random() * 100)} className='m-1' />
+                            <ProgressBar key={idx} striped animated variant={variant} now={Math.floor(Math.random() * 100)} className='m-1' />
                         ))
                     }
                 </div>
@@ -78,7 +73,7 @@ Rebuilt for React." />
                     <h2>装载中</h2>
                     {
                         colorList.map((variant, idx) => (
-                            <Spinner animation="border" variant={variant} className='m-1' />
+                            <Spinner key={idx} animation="border" variant={variant} className='m-1' />
                         ))
                     }
                 </div>
@@ -105,8 +100,8 @@ Rebuilt for React." />
                         </Button>
                     </Form>
                 </div>
-            </main>
-        </div>
+            </section>
+        </MainLayout>
     )
 }
 

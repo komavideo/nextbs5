@@ -2,7 +2,9 @@ import nc from 'next-connect';
 
 import { getNews, updateNews, deleteNews } from '../../../controllers/newsController'
 
-const handler = nc({});
+import onError from '../../../middlewares/errors'
+
+const handler = nc({ onError });
 
 handler.get(getNews)
 handler.put(updateNews)

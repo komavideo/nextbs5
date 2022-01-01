@@ -69,6 +69,7 @@ const News = () => {
                 <Button variant='primary' onClick={() => btn_listNews_click(3)} className="mx-1">List Page 3</Button>
             </div>
             <div className="my-1">
+                <Button variant='danger' onClick={() => btn_getNews_click(0)} className="mx-1">Get 0(错误演示)</Button>
                 <Button variant='secondary' onClick={() => btn_getNews_click(1)} className="mx-1">Get 1</Button>
                 <Button variant='secondary' onClick={() => btn_getNews_click(2)} className="mx-1">Get 2</Button>
                 <Button variant='secondary' onClick={() => btn_getNews_click(3)} className="mx-1">Get 3</Button>

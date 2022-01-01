@@ -1,4 +1,7 @@
-const listNews = (async (req, res) => {
+import catchAsyncErrors from '../middlewares/asyncErrors'
+import ErrorHandler from '../utils/errorHandler'
+
+const listNews = catchAsyncErrors(async (req, res) => {
     return res.json({
         result: 'List Page ' + req.query.p,
         method: req.method,
@@ -7,7 +10,10 @@ const listNews = (async (req, res) => {
     })
 })
 
-const getNews = (async (req, res) => {
+const getNews = catchAsyncErrors(async (req, res, next) => {
+    if (req.query.id == '0')
+        return next(new ErrorHandler('没这个ID', 400));
+
     return res.json({
         result: 'Get ' + req.query.id,
         method: req.method,
@@ -16,7 +22,7 @@ const getNews = (async (req, res) => {
     })
 })
 
-const createNews = (async (req, res) => {
+const createNews = catchAsyncErrors(async (req, res) => {
     return res.json({
         result: 'Create 1',
         method: req.method,
@@ -25,7 +31,7 @@ const createNews = (async (req, res) => {
     })
 })
 
-const updateNews = (async (req, res) => {
+const updateNews = catchAsyncErrors(async (req, res) => {
     return res.json({
         result: 'Update 1',
         method: req.method,
@@ -35,7 +41,7 @@ const updateNews = (async (req, res) => {
     })
 })
 
-const deleteNews = (async (req, res) => {
+const deleteNews = catchAsyncErrors(async (req, res) => {
     return res.json({
         result: 'Delete 1',
         method: req.method,

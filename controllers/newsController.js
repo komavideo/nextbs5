@@ -33,7 +33,7 @@ const createNews = catchAsyncErrors(async (req, res) => {
 
 const updateNews = catchAsyncErrors(async (req, res) => {
     return res.json({
-        result: 'Update 1',
+        result: 'Update ' + req.query.id,
         method: req.method,
         query: req.query,
         url: req.url,
@@ -43,7 +43,7 @@ const updateNews = catchAsyncErrors(async (req, res) => {
 
 const deleteNews = catchAsyncErrors(async (req, res) => {
     return res.json({
-        result: 'Delete 1',
+        result: 'Delete ' + req.query.id,
         method: req.method,
         query: req.query,
         url: req.url,

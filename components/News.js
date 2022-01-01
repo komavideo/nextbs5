@@ -61,7 +61,7 @@ const News = () => {
 
     return (
         <div>
-            <h3>Restful API 测试</h3>
+            <h3 className="text-secondary">Restful API 测试</h3>
             <hr />
             <div className="my-1">
                 <Button variant='primary' onClick={() => btn_listNews_click(1)} className="mx-1">List Page 1</Button>

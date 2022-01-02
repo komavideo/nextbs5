@@ -9,7 +9,7 @@ const MyWebContext = createContext({
 export default MyWebContext;
 
 export function MyWebContextProvider(props) {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(100);
 
     const addCount = () => {
         setCount(count + 1)

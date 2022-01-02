@@ -11,7 +11,7 @@ $ npm install react-bootstrap bootstrap@5.1.3
 # Next.js 中间件
 $ npm install next-connect
 # Redux 状态管理
-$ npm install redux redux-thunk redux-devtools-extension react-redux next-redux-wrapper
+# $ npm install redux redux-thunk redux-devtools-extension react-redux next-redux-wrapper
 ```
 
 ## 从 Github 取得运行

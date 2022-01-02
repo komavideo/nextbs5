@@ -6,9 +6,10 @@ import { Navbar, Nav } from 'react-bootstrap';
 const Header = () => {
     return (
         <React.Fragment>
-            <Navbar bg="light" className='px-3 py-2 shadow-sm'>
-                <Link href="/">
-                    <Navbar.Brand style={{ cursor: 'pointer' }}>
+            {/* expand: {'sm' | 'md' | 'lg' | 'xl' | 'xxl'} */}
+            <Navbar bg="light" expand="md" className='px-3 py-2 shadow-sm'>
+                <Navbar.Brand style={{ cursor: 'pointer' }}>
+                    <Link href="/">
                         <div className="link">
                             <img
                                 alt=""
@@ -18,21 +19,27 @@ const Header = () => {
                                 className="d-inline-block align-top me-2" />
                             <span className="text-secondary">Next.js + Bootstrap5</span>
                         </div>
-                    </Navbar.Brand>
-                </Link>
-                <Nav className="ms-auto text-secondary">
-                    <Link href="/">
-                        <a className="p-2 nav-link">
-                            Home
-                        </a>
                     </Link>
-                    <Link href="/dlc">
-                        <a className="p-2 nav-link">
-                            DLC
-                        </a>
-                    </Link>
-                </Nav>
+                </Navbar.Brand>
+
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="ms-auto text-secondary">
+                        <Link href="/">
+                            <a className="p-2 nav-link">
+                                Home
+                            </a>
+                        </Link>
+                        <Link href="/dlc">
+                            <a className="p-2 nav-link">
+                                DLC
+                            </a>
+                        </Link>
+                    </Nav>
+                </Navbar.Collapse>
+
             </Navbar>
+
         </React.Fragment>
     )
 }

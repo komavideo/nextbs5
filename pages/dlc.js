@@ -65,7 +65,7 @@ const DLC = () => {
                     <h2>进度条</h2>
                     {
                         colorList.map((variant, idx) => (
-                            <ProgressBar key={idx} striped animated variant={variant} now={Math.floor(Math.random() * 100)} className='m-1' />
+                            <ProgressBar key={idx} striped animated variant={variant} now={Math.floor(Math.random() * 99) + 1} className='m-1' />
                         ))
                     }
                 </div>

@@ -1,6 +1,7 @@
 import MainLayout from '../components/layout/MainLayout'
 
 import { Button, Badge, DropdownButton, ButtonGroup, Dropdown, ProgressBar, Spinner, Form } from 'react-bootstrap'
+import Counter from '../components/Counter'
 
 const colorList = [
     'primary',
@@ -20,6 +21,7 @@ const DLC = () => {
     return (
         <MainLayout title='React + Bootstrap5 组件演示'>
             <section className='m-3'>
+                <Counter />
                 <h3 className="text-secondary">React+Bootstrap5</h3>
                 <hr />
                 <div>

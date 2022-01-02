@@ -1,14 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SSRProvider from 'react-bootstrap/SSRProvider';
 
-import { storeWrapper } from '../redux/store'
+import { MyWebContextProvider } from "../store";
 
 function MyApp({ Component, pageProps }) {
     return (
-        <SSRProvider>
+        <MyWebContextProvider>
             <Component {...pageProps} />
-        </SSRProvider>
+        </MyWebContextProvider>
+        // <SSRProvider>
+        // </SSRProvider>
     )
 }
 
-export default storeWrapper.withRedux(MyApp) 
+export default MyApp

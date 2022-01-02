@@ -5,7 +5,7 @@ const headers = {
     'Content-Type': 'application/json',
 }
 
-const News = () => {
+const RApi = () => {
     const [message, setMessage] = useState('')
 
     const btn_listNews_click = async (pageNumber) => {
@@ -96,4 +96,4 @@ const News = () => {
     )
 }
 
-export default News;
+export default RApi;

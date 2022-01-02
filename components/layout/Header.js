@@ -35,6 +35,11 @@ const Header = () => {
                                 DLC
                             </a>
                         </Link>
+                        <Link href="/rapi">
+                            <a className="p-2 nav-link">
+                                RAPI
+                            </a>
+                        </Link>
                     </Nav>
                 </Navbar.Collapse>
 

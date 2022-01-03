@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from 'react';
 import { Button } from "react-bootstrap";
-import MyWebContext from '../store';
+import MyWebContext from '../../store';
 
 const Counter = () => {
     const myWebCtx = useContext(MyWebContext);

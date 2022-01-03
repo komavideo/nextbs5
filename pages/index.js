@@ -1,4 +1,4 @@
-import Counter from '../components/Counter'
+import Counter from '../components/widgets/Counter'
 import MainLayout from '../components/layout/MainLayout'
 import Home from '../components/Home'
 

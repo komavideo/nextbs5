@@ -10,6 +10,21 @@ const listUsers = catchAsyncErrors(async (req, res) => {
     })
 })
 
+const createUser = catchAsyncErrors(async (req, res) => {
+    const user = {
+        id: users.length + 1,
+        uid: 'zhangsan',
+        pwd: '12345678',
+        displayName: '张三',
+    }
+    users.push(user)
+    return res.json({
+        result: 'ok',
+        user,
+    })
+})
+
 export {
-    listUsers
+    listUsers,
+    createUser,
 }

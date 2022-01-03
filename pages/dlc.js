@@ -1,7 +1,7 @@
 import MainLayout from '../components/layout/MainLayout'
 
 import { Button, Badge, DropdownButton, ButtonGroup, Dropdown, ProgressBar, Spinner, Form } from 'react-bootstrap'
-import Counter from '../components/Counter'
+import Counter from '../components/widgets/Counter'
 
 const colorList = [
     'primary',

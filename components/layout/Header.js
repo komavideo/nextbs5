@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 import { Navbar, Nav } from 'react-bootstrap';
-import Login from "../auth/Login";
+import AuthHeader from "../auth/AuthHeader";
 
 const Header = () => {
     return (
@@ -41,7 +41,7 @@ const Header = () => {
                                 RAPI
                             </a>
                         </Link>
-                        <Login />
+                        <AuthHeader />
                     </Nav>
                 </Navbar.Collapse>
 

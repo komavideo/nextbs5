@@ -3,10 +3,10 @@ import ErrorHandler from '../utils/errorHandler'
 
 const listNews = catchAsyncErrors(async (req, res) => {
     return res.json({
-        result: 'List Page ' + req.query.p,
+        url: req.url,
         method: req.method,
         query: req.query,
-        url: req.url,
+        result: 'List Page ' + req.query.p,
     })
 })
 
@@ -15,38 +15,38 @@ const getNews = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler('没这个ID', 400));
 
     return res.json({
-        result: 'Get ' + req.query.id,
+        url: req.url,
         method: req.method,
         query: req.query,
-        url: req.url,
+        result: 'Get ' + req.query.id,
     })
 })
 
 const createNews = catchAsyncErrors(async (req, res) => {
     return res.json({
-        result: 'Create 1',
-        method: req.method,
         url: req.url,
+        method: req.method,
         body: req.body,
+        result: 'Create 1',
     })
 })
 
 const updateNews = catchAsyncErrors(async (req, res) => {
     return res.json({
-        result: 'Update ' + req.query.id,
+        url: req.url,
         method: req.method,
         query: req.query,
-        url: req.url,
         body: req.body,
+        result: 'Update ' + req.query.id,
     })
 })
 
 const deleteNews = catchAsyncErrors(async (req, res) => {
     return res.json({
-        result: 'Delete ' + req.query.id,
+        url: req.url,
         method: req.method,
         query: req.query,
-        url: req.url,
+        result: 'Delete ' + req.query.id,
     })
 })
 

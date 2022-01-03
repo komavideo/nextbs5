@@ -19,11 +19,15 @@ $ npm install next-connect
 ```bash
 $ git clone https://github.com/komavideo/nextbs5
 $ cd nextbs5
+# 删除Git信息, 单独使用场合
+# $ rm -fr .git
 $ npm install
 $ npm run dev
 ```
 
 ## Github
+
+*本地加入 Github*
 
 ```bash
 git remote add origin https://github.com/komavideo/nextbs5.git

@@ -4,7 +4,7 @@ import RApi from '../components/RApi'
 
 export default function Home() {
     return (
-        <MainLayout>
+        <MainLayout title='Restful API 测试'>
             <main className='m-3'>
                 <Counter />
                 <RApi />

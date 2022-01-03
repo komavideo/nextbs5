@@ -10,6 +10,8 @@ $ cd nextbs5
 $ npm install react-bootstrap bootstrap@5.1.3
 # Next.js 中间件
 $ npm install next-connect
+# 字符串校验模块
+$ npm install validator
 # 口令加密模块
 $ npm install bcrypt
 # Redux 状态管理

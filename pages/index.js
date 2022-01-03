@@ -1,13 +1,13 @@
 import Counter from '../components/Counter'
 import MainLayout from '../components/layout/MainLayout'
+import Home from '../components/Home'
 
-export default function Home() {
+export default function Index() {
     return (
-        <MainLayout>
+        <MainLayout title='主页'>
             <main className='m-3'>
                 <Counter />
-                <h3 className="text-secondary">Next.js 工程模版</h3>
-                <hr />
+                <Home />
             </main>
         </MainLayout>
     )

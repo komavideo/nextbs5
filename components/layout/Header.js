@@ -26,11 +26,6 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto text-secondary">
-                        <Link href="/">
-                            <a className="p-2 nav-link">
-                                Home
-                            </a>
-                        </Link>
                         <Link href="/dlc">
                             <a className="p-2 nav-link">
                                 DLC

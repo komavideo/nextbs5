@@ -14,6 +14,8 @@ $ npm install next-connect
 $ npm install validator
 # 口令加密模块
 $ npm install bcrypt
+# NextAuth 认证模块
+$ npm install next-auth
 # Redux 状态管理
 # $ npm install redux redux-thunk redux-devtools-extension react-redux next-redux-wrapper
 ```

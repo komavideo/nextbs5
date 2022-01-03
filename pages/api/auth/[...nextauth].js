@@ -11,11 +11,11 @@ import { users } from '../../../data'
 
 // https://next-auth.js.org/configuration/options
 export default NextAuth({
+    secret: 'AgFG1DINpIyeMcqnkoGdBglwwdXJSgzIv6S8PoAnw8Z',
     session: {
         strategy: 'jwt',
     },
     jwt: {
-        secret: 'AgFG1DINpIyeMcqnkoGdBglwwdXJSgzIv6S8PoAnw8Z',
         maxAge: 60 * 60 * 24 * 30,
     },
     providers: [

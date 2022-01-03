@@ -1,3 +1,5 @@
+const bcrypt = require('bcrypt');
+
 import catchAsyncErrors from '../middlewares/asyncErrors'
 import ErrorHandler from '../utils/errorHandler'
 import { users } from '../data'

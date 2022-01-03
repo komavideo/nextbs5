@@ -1,8 +1,8 @@
 import nc from 'next-connect';
 
-import { login } from '../../controllers/authController'
+import { login } from '../../../controllers/authController'
 
-import onError from '../../middlewares/errors'
+import onError from '../../../middlewares/errors'
 
 const handler = nc({ onError });
 

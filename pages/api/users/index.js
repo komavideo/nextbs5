@@ -1,12 +1,11 @@
 import nc from 'next-connect';
 
-import { listNews, createNews } from '../../../controllers/newsController'
+import { listUsers } from '../../../controllers/userController'
 
 import onError from '../../../middlewares/errors'
 
 const handler = nc({ onError });
 
-handler.get(listNews)
-handler.post(createNews)
+handler.get(listUsers)
 
 export default handler;

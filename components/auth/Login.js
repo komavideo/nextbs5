@@ -67,7 +67,7 @@ const Login = () => {
                                 <Form.Control type="password" placeholder="Password" className="p-2" ref={refPWD} />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                <Form.Check type="checkbox" label="Cookie 使用" ref={refAgreement} />
+                                <Form.Check type="checkbox" label="Cookie 使用" className="text-secondary ms-1" ref={refAgreement} />
                             </Form.Group>
                             <div className="text-danger">
                                 {message && (

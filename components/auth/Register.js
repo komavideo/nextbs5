@@ -56,7 +56,7 @@ const Register = () => {
                     <Col xs lg="6" className="card bg-white p-3 mt-3 shadow">
                         <div className="d-flex justify-content-center">
                             <Image
-                                src="/lock.png"
+                                src="/add_user.png"
                                 layout="fixed"
                                 width={48}
                                 height={48}
@@ -116,7 +116,7 @@ const Register = () => {
                             </div>
                             <div className="d-flex justify-content-start">
                                 <Link href="/auth/login">
-                                    用户登录
+                                    <a className="link-primary">用户登录</a>
                                 </Link>
                             </div>
                         </Form>

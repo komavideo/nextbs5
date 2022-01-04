@@ -83,7 +83,7 @@ const Login = () => {
                             </div>
                             <div className="d-flex justify-content-end">
                                 <Link href="/auth/register">
-                                    用户注册
+                                    <a className="link-primary">用户注册</a>
                                 </Link>
                             </div>
                         </Form>

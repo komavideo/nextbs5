@@ -39,9 +39,7 @@ const Header = () => {
                         <AuthHeader />
                     </Nav>
                 </Navbar.Collapse>
-
             </Navbar>
-
         </React.Fragment>
     )
 }

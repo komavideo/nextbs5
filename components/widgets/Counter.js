@@ -11,8 +11,8 @@ const Counter = () => {
                 <div className="text-secondary">useContext 管理</div>
                 <div>
                     <span className="me-3 text-secondary">{myWebCtx.count}</span>
-                    <Button variant="success" className="m-1 btn-sm" onClick={() => { myWebCtx.addCount() }}>加1</Button>
-                    <Button variant="success" className="m-1 btn-sm" onClick={() => { myWebCtx.minusCount() }}>减1</Button>
+                    <Button variant="primary" className="m-1 btn-sm" onClick={() => { myWebCtx.addCount() }}>加1</Button>
+                    <Button variant="primary" className="m-1 btn-sm" onClick={() => { myWebCtx.minusCount() }}>减1</Button>
                 </div>
             </div>
         </React.Fragment>

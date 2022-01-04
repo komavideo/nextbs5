@@ -50,6 +50,8 @@ const createUser = catchAsyncErrors(async (req, res, next) => {
 
 const getUser = catchAsyncErrors(async (req, res, next) => {
     const id = req.query.id
+    // const user = req.user
+    // console.log(user)
 
     if (!id)
         return next(new ErrorHandler('非法请求', 400));

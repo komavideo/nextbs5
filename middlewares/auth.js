@@ -6,8 +6,6 @@ const isAuthenticatedUser = catchAsyncErrors(async (req, res, next) => {
     // gets auth-token from req.headers
     const session = await getSession({ req });
 
-    console.log(session)
-
     if (session) {
         req.user = session.user;
         next();

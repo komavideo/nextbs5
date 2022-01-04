@@ -31,7 +31,7 @@ export default NextAuth({
             //     pwd: { label: "Password", type: "password" }
             // },
             async authorize(credentials, req) {
-                console.log("credentials:", credentials)
+                // console.log("credentials:", credentials)
 
                 const { uid, pwd } = credentials;
 
@@ -46,6 +46,8 @@ export default NextAuth({
 
                 if (!bcrypt.compareSync(pwd, user.pwd))
                     throw new Error("登录失败")
+
+                delete user['pwd']
 
                 return (user)
             }
@@ -83,7 +85,7 @@ export default NextAuth({
             return token
         },
         async session(data) {
-            console.log("session.data", data)
+            // console.log("session.data", data)
             const { session, token } = data
             session.user = token.user
             return session

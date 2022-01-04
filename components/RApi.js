@@ -1,9 +1,7 @@
 import { React, useState } from "react";
-import { Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap';
 
-const headers = {
-    'Content-Type': 'application/json',
-}
+import { headers } from '../utils/httpHandler';
 
 const RApi = () => {
     const [message, setMessage] = useState('')

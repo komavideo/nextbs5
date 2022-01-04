@@ -30,6 +30,11 @@ const createUser = catchAsyncErrors(async (req, res, next) => {
     else
         return next(new ErrorHandler('显示名不合法', 400));
 
+    // 查询输入的用户
+    const existed_user = users.find(item => item.uid == uid)
+    if (existed_user)
+        return next(new ErrorHandler('重复登录用户', 400));
+
     const user = {
         id: users.length + 1,
         uid,

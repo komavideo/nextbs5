@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import Link from "next/link";
 import { signOut } from 'next-auth/react'
 
@@ -31,7 +31,14 @@ const AuthHeader = () => {
     return (
         <React.Fragment>
             {myWebCtx.user ? (
-                <Button className="btn btn-sm btn-success" onClick={btnSignOut_click}>退出</Button>
+                <div className="d-flex">
+                    <Link href="/auth/profile">
+                        <a className="p-2 link-primary text-decoration-underline">
+                            {myWebCtx.user.uid}
+                        </a>
+                    </Link>
+                    <Button className="btn btn-sm btn-success" onClick={btnSignOut_click}>退出</Button>
+                </div>
             ) : (
                 <Link href="/auth/login">
                     <Button className="btn btn-sm btn-danger">登录</Button>

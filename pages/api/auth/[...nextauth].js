@@ -35,9 +35,19 @@ export default NextAuth({
 
                 const { uid, pwd } = credentials;
 
-                // bcrypt.compareSync('12345678', user.pwd) = true
+                if (!uid || !pwd)
+                    throw new Error("登录失败")
 
-                return Promise.resolve({ uid })
+                // 查询输入的用户
+                const user = users.find(item => item.uid == uid)
+
+                if (!user)
+                    throw new Error("登录失败")
+
+                if (!bcrypt.compareSync(pwd, user.pwd))
+                    throw new Error("登录失败")
+
+                return (user)
             }
         }),
     ],
@@ -64,17 +74,19 @@ export default NextAuth({
         // async redirect({ url, baseUrl }) { return baseUrl },
         // async session({ session, token, user }) { return session },
         // async jwt({ token, user, account, profile, isNewUser }) { return token }
-        async jwt({ token, account }) {
-            // Persist the OAuth access_token to the token right after signin
-            if (account) {
-                token.accessToken = account.access_token
+        async jwt(data) {
+            // console.log("jwt.data", data)
+            const { token, user } = data
+            if (user) {
+                token.user = user
             }
             return token
         },
-        async session({ session, token, user }) {
-            // Send properties to the client, like an access_token from a provider.
-            session.accessToken = token.accessToken
+        async session(data) {
+            console.log("session.data", data)
+            const { session, user } = data
+            session.user = user.user
             return session
-        }
+        },
     },
 })

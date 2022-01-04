@@ -1,8 +1,35 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
+import { useRouter } from 'next/router'
+
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
+import { signIn } from 'next-auth/react'
+
 const Login = () => {
+    const router = useRouter()
+    const [message, setMessage] = useState('')
+    const refUID = useRef();
+    const refPWD = useRef();
+    const refAgreement = useRef();
+
+    const btnLogin_click = async () => {
+        setMessage('')
+        const result = await signIn("credentials", {
+            redirect: false,
+            uid: refUID.current.value,
+            pwd: refPWD.current.value,
+        })
+        console.log(result)
+
+        if (result.error) {
+            setMessage(result.error)
+        } else {
+            router.push('/')
+        }
+
+    }
+
     return (
         <React.Fragment>
             <Container>
@@ -24,7 +51,7 @@ const Login = () => {
                         <Form>
                             <Form.Group className="mb-3" controlId="formUsername">
                                 <Form.Label className="text-secondary ms-1">用户名(ID)</Form.Label>
-                                <Form.Control type="email" placeholder="Enter username" className="p-2" />
+                                <Form.Control type="email" placeholder="Enter username" className="p-2" ref={refUID} />
                                 <Form.Text className="text-muted">
                                     输入您的用户名(ID)
                                 </Form.Text>
@@ -32,13 +59,14 @@ const Login = () => {
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label className="text-secondary ms-1">口令</Form.Label>
-                                <Form.Control type="password" placeholder="Password" className="p-2" />
+                                <Form.Control type="password" placeholder="Password" className="p-2" ref={refPWD} />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                <Form.Check type="checkbox" label="同意协议" />
+                                <Form.Check type="checkbox" label="同意协议" ref={refAgreement} />
                             </Form.Group>
+                            <div className="text-danger">{message}</div>
                             <div className="d-flex justify-content-center py-3">
-                                <Button variant="primary" className="btn btn-success btn-lg shadow-sm" style={{ width: '200px' }}>
+                                <Button variant="primary" className="btn btn-success btn-lg shadow-sm" style={{ width: '200px' }} onClick={btnLogin_click}>
                                     登录
                                 </Button>
                             </div>

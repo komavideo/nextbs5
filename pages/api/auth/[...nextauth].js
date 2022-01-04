@@ -16,7 +16,7 @@ export default NextAuth({
         strategy: 'jwt',
     },
     jwt: {
-        maxAge: 60 * 60 * 24 * 30,
+        maxAge: 60 * 60 * 24 * 7,
     },
     providers: [
         CredentialsProvider({
@@ -84,8 +84,8 @@ export default NextAuth({
         },
         async session(data) {
             console.log("session.data", data)
-            const { session, user } = data
-            session.user = user.user
+            const { session, token } = data
+            session.user = token.user
             return session
         },
     },

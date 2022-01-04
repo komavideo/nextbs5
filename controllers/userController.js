@@ -48,7 +48,27 @@ const createUser = catchAsyncErrors(async (req, res, next) => {
     })
 })
 
+const getUser = catchAsyncErrors(async (req, res, next) => {
+    const id = req.query.id
+
+    if (!id)
+        return next(new ErrorHandler('非法请求', 400));
+
+    const existed_user = users.find(item => item.uid == id)
+
+    if (!existed_user)
+        return next(new ErrorHandler('非法请求', 400));
+
+    delete existed_user['pwd']
+
+    return res.json({
+        result: 'ok',
+        user: existed_user,
+    })
+})
+
 export {
     listUsers,
     createUser,
+    getUser,
 }

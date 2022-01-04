@@ -16,7 +16,7 @@ $ npm install validator
 $ npm install bcrypt
 # NextAuth 认证模块
 $ npm install next-auth
-# Redux 状态管理
+# Redux 状态管理(真的不好用, 等待 Recoil)
 # $ npm install redux redux-thunk redux-devtools-extension react-redux next-redux-wrapper
 ```
 

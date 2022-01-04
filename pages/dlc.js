@@ -14,7 +14,7 @@ const colorList = [
     'dark',
 ]
 
-const Home = () => {
+const DLCPage = () => {
     const btn_click = (variant) => {
         alert(`您按下了 ${variant} 颜色的按钮。`)
     }
@@ -107,4 +107,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default DLCPage;

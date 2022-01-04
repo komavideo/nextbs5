@@ -1,8 +1,7 @@
-import React from "react";
-import MainLayout from '../components/layout/MainLayout'
-import Counter from '../components/widgets/Counter'
+import MainLayout from '../../components/layout/MainLayout'
+import Counter from '../../components/widgets/Counter'
 
-import Login from "../components/auth/Login";
+import Login from "../../components/auth/Login";
 
 const LoginPage = () => {
     return (

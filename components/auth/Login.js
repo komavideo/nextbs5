@@ -6,6 +6,7 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 import { signIn } from 'next-auth/react'
 import ButtonLoader from "../widgets/ButtonLoader";
+import Link from "next/link";
 
 const Login = () => {
     const router = useRouter()
@@ -73,6 +74,12 @@ const Login = () => {
                                 <Button disabled={loginning} variant="primary" className="btn btn-success btn-lg shadow-sm" style={{ width: '200px' }} onClick={btnLogin_click}>
                                     {loginning ? <ButtonLoader /> : "登录"}
                                 </Button>
+                            </div>
+                            <div className="d-flex justify-content-end">
+                                <Link href="/auth/register">
+                                    注册用户
+                                </Link>
+
                             </div>
                         </Form>
                     </Col>

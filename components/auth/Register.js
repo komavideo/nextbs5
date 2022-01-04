@@ -1,11 +1,11 @@
 import React from "react";
 
-const NotFoundPage = () => {
+const Register = () => {
     return (
         <React.Fragment>
-            <h1>NotFound</h1>
+            <h1>Register</h1>
         </React.Fragment>
     )
 }
 
-export default NotFoundPage;
+export default Register;

@@ -5,7 +5,7 @@ import Register from '../../components/auth/Register'
 
 const RegisterPage = () => {
     return (
-        <MainLayout title='注册用户'>
+        <MainLayout title='用户注册'>
             <main className='m-3'>
                 <Counter />
                 <Register />

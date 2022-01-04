@@ -56,7 +56,7 @@ const Login = () => {
                         <Form>
                             <Form.Group className="mb-3" controlId="formUsername">
                                 <Form.Label className="text-secondary ms-1">用户名(ID)</Form.Label>
-                                <Form.Control type="email" placeholder="Enter username" className="p-2" ref={refUID} />
+                                <Form.Control type="text" placeholder="Enter username" className="p-2" ref={refUID} />
                                 <Form.Text className="text-muted">
                                     输入您的用户名(ID)
                                 </Form.Text>
@@ -67,9 +67,15 @@ const Login = () => {
                                 <Form.Control type="password" placeholder="Password" className="p-2" ref={refPWD} />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                <Form.Check type="checkbox" label="同意协议" ref={refAgreement} />
+                                <Form.Check type="checkbox" label="Cookie 使用" ref={refAgreement} />
                             </Form.Group>
-                            <div className="text-danger">{message}</div>
+                            <div className="text-danger">
+                                {message && (
+                                    <ul>
+                                        <li>{message}</li>
+                                    </ul>
+                                )}
+                            </div>
                             <div className="d-flex justify-content-center py-3">
                                 <Button disabled={loginning} variant="primary" className="btn btn-success btn-lg shadow-sm" style={{ width: '200px' }} onClick={btnLogin_click}>
                                     {loginning ? <ButtonLoader /> : "登录"}
@@ -77,9 +83,8 @@ const Login = () => {
                             </div>
                             <div className="d-flex justify-content-end">
                                 <Link href="/auth/register">
-                                    注册用户
+                                    用户注册
                                 </Link>
-
                             </div>
                         </Form>
                     </Col>

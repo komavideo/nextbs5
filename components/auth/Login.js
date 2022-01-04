@@ -5,16 +5,19 @@ import { useRouter } from 'next/router'
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 import { signIn } from 'next-auth/react'
+import ButtonLoader from "../widgets/ButtonLoader";
 
 const Login = () => {
     const router = useRouter()
     const [message, setMessage] = useState('')
+    const [loginning, setLoginning] = useState(false)
     const refUID = useRef();
     const refPWD = useRef();
     const refAgreement = useRef();
 
     const btnLogin_click = async () => {
         setMessage('')
+        setLoginning(true)
         const result = await signIn("credentials", {
             redirect: false,
             uid: refUID.current.value,
@@ -24,6 +27,7 @@ const Login = () => {
 
         if (result.error) {
             setMessage(result.error)
+            setLoginning(false)
         } else {
             router.push('/')
         }
@@ -66,8 +70,8 @@ const Login = () => {
                             </Form.Group>
                             <div className="text-danger">{message}</div>
                             <div className="d-flex justify-content-center py-3">
-                                <Button variant="primary" className="btn btn-success btn-lg shadow-sm" style={{ width: '200px' }} onClick={btnLogin_click}>
-                                    登录
+                                <Button disabled={loginning} variant="primary" className="btn btn-success btn-lg shadow-sm" style={{ width: '200px' }} onClick={btnLogin_click}>
+                                    {loginning ? <ButtonLoader /> : "登录"}
                                 </Button>
                             </div>
                         </Form>

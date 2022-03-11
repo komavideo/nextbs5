@@ -44,3 +44,23 @@ git push -u origin main
 ## Restful API 测试用具
 
 https://reqbin.com/
+
+## Docker
+
+```bash
+# 安装依赖包
+npm install
+# 打包编译
+npm run build
+# 编译 Docker 镜像
+docker build -t komavideo/microservices-nextbs5:v1 .
+docker image ls
+# 删除 Docker 镜像
+docker image rm komavideo/microservices-nextbs5:v1
+# 进入容器确认
+docker run -it --rm komavideo/microservices-nextbs5:v1 sh
+# 本地执行
+docker run --rm --name microservices-nextbs5 -p 3000:3000 komavideo/microservices-nextbs5:v1
+# 推送 DockerHub
+docker push komavideo/microservices-nextbs5:v1
+```

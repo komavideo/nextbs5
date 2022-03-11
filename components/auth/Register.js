@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { Container, Row, Col, Form, Button, FloatingLabel } from "react-bootstrap";
 import ButtonLoader from "../widgets/ButtonLoader";
-import { headers } from '../utils/httpHandler';
+import { headers } from '../../utils/httpHandler';
 
 // const headers = {
 //     'Content-Type': 'application/json',
